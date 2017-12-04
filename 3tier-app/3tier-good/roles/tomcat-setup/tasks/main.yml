@@ -1,0 +1,23 @@
+---
+  - name: install tomcat
+    package:
+      name: tomcat
+      state: latest
+    notify: restart-tomcat
+
+  - name: enable tomcat at boot
+    service:
+      name: tomcat
+      enabled: yes
+
+  - name: create ansible tomcat directory
+    file:
+      path: "{{ tomcat_directory_path }}"
+      state: directory
+
+  - name: copy static index.html to tomcat webapps/ansible/index.html
+    template:
+      src: index.html.j2
+      dest: "{{ tomcat_directory_path }}/index.html"
+      mode: 0644
+    notify: restart-tomcat
