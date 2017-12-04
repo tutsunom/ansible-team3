@@ -1,5 +1,5 @@
 ---
-# defaults file for roles/configurations
+# defaults file for roles/repo-setup
 # own_repo_path: http://example.com/
 repo_files:
   - open_three-tier-app.repo
