@@ -1,7 +1,9 @@
 ---
 # tasks file for roles/configurations
 - name: enable repos
-  copy:
-    src: open_three-tier-app.repo
-    dest: /etc/yum.repos.d/open_three-tier-app.repo
+  template:
+    src: "{{ item }}.j2"
+    dest: /etc/yum.repos.d/{{ item }}
     mode: 0644
+  with_items:
+    - "{{ repo_files }}"

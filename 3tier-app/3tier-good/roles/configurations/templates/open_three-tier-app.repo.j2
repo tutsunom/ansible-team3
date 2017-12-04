@@ -1,0 +1,8 @@
+{% for rhel_repo_name in rhel_repos %}
+[{{ rhel_repo_name.path }}]
+name={{ rhel_repo_name.name}}
+baseurl={{  own_repo_path  }}/{{ rhel_repo_name.path }}
+enabled=1
+gpgcheck=0
+
+{% endfor %}

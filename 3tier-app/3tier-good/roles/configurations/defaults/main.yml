@@ -1,2 +1,11 @@
 ---
 # defaults file for roles/configurations
+# own_repo_path: http://example.com/
+repo_files:
+  - open_three-tier-app.repo
+  - epel.repo
+rhel_repos:
+  - { name: "Red Hat Enterprise Linux 7" , path: rhel-7-server-rpms }
+  - { name: "Red Hat Enterprise Linux 7 Common" , path: rhel-7-server-rh-common-rpms }
+  - { name: "Red Hat Enterprise Linux 7 Extras" , path: rhel-7-server-extras-rpms }
+  - { name: "Red Hat Enterprise Linux 7 Optional" , path: rhel-7-server-optional-rpms }
