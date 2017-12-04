@@ -1,0 +1,17 @@
+---
+# tasks file for roles/haproxy-setup
+- name: install HAProxy
+  yum: 
+    name: "{{ haproxy_module_name }}"
+    state: latest
+
+- name: to service HAproxy
+  service: 
+    name: "{{ haproxy_service_name }}"
+    enabled: yes
+
+- name: configure HAProxy
+  template: 
+    src: haproxy.cfg.j2
+    dest: "{{ haproxy_config_path }}"
+  notify: restart HAproxy
