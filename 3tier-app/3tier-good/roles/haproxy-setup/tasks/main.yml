@@ -14,4 +14,5 @@
   template: 
     src: haproxy.cfg.j2
     dest: "{{ haproxy_config_path }}"
+    mode: 0644
   notify: restart HAproxy
