@@ -1,0 +1,23 @@
+---
+
+- name: setup frontend
+  hosts: frontends
+  become: yes
+  roles:
+    - name: repo-setup
+    - name: haproxy-setup
+
+- name: setup app
+  hosts: apps
+  become: yes
+  roles:
+    - name: repo-setup
+    - name: tomcat-setup
+    - name: httpd-setup
+
+- name: setup appdb
+  hosts: appdbs
+  become: yes
+  roles:
+    - name: repo-setup
+    - name: geerlingguy.postgresql

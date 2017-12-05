@@ -1,0 +1,16 @@
+[all:vars]
+GUID=d711
+timeout=60
+ansible_become=yes
+ansible_ssh_user=ec2-user
+
+[frontends]
+frontend1.d711.internal
+
+[apps]
+app1.d711.internal
+app2.d711.internal
+
+[appdbs]
+appdb1.d711.internal
+
