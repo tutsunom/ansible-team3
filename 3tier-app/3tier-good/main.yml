@@ -13,7 +13,6 @@
   roles:
     - name: repo-setup
     - name: tomcat-setup
-    - name: httpd-setup
 
 - name: setup appdb
   hosts: appdbs
